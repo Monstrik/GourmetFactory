@@ -1,0 +1,14 @@
+{
+  "name": "pos-service",
+  "version": "1.0.0",
+  "description": "POS service for restaurant simulation",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "rabbitmq-client": "^4.6.0"
+  }
+}
