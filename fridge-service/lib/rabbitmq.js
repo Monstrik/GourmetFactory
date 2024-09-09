@@ -69,7 +69,7 @@ async function connectToRabbitMQ(msgReceived) {
 
 async function addMessageToQueue(message) {
     messageQueue.push(message);
-    console.log('Message added to local queue:', messageQueue.length, JSON.stringify(message));
+    console.log('Message added to local queue:', messageQueue.length, JSON.stringify(message).slice(0, 80));
     await processMessageQueue();
 }
 

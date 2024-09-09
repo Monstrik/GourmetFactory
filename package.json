@@ -3,6 +3,7 @@
   "version": "1.0.0",
 
   "scripts": {
+    "start": "docker compose up -d",
     "rabbitmq": "docker run -d --name local-rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management"
   },
   "keywords": [],

@@ -25,9 +25,19 @@ const productReceived = (product) => {
     fridge[product.shelfType].push(product);
 }
 
+
 await connectToRabbitMQ(productReceived);
-setInterval(() => {
+const printAll = () => {
     checkExpiredProducts();
     printFridge(fridge);
     printExpiredProducts(expiredProducts);
-}, 10000)
+}
+
+setInterval(printAll, 10000)
+
+const onShutdown = async () => {
+    console.log(`Fridge Service stoped...}`);
+    printAll();
+}
+process.on('SIGINT', onShutdown)
+process.on('SIGTERM', onShutdown)

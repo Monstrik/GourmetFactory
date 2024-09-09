@@ -50,7 +50,7 @@ async function processMessageQueue() {
             const message = messageQueue.shift();
             // await pub.send({exchange: 'my-events-events', routingKey: 'users.visit'}, message)
             await pub.send(queue, message);
-            console.log('Message sent:',  JSON.stringify(message));
+            console.log('Message sent:',  JSON.stringify(message).slice(0, 80));
         }
     }
     else {

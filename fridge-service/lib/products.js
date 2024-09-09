@@ -53,5 +53,5 @@ export function printExpiredProducts(expiredProducts) {
         const shortTime = now.toLocaleTimeString();
         console.log("\t\t" + element.name, element.shelfTime, shortTime)
     });
-    console.log('--- total lost',total ,"---");
+    console.log('--- Total lost:',total ,"---");
 }
