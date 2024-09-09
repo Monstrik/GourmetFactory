@@ -58,6 +58,17 @@ services:
       rabbitmq:
         condition: service_healthy
 
+  fridge-service-2:
+    build: ./fridge-service
+    ports:
+      - "3004:3003"
+    environment:
+      - RABBITMQ_URL=amqp://your_username:your_password@rabbitmq:5672
+      - CONSUL_URL=http://consul:8500
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
 #
 #  delivery-service:
 #    build: ./delivery-service
